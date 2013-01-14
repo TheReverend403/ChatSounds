@@ -1,0 +1,11 @@
+name: ChatSounds
+main: com.github.thereverend403.chatsounds
+version: 1.32
+author: TheReverend403
+commands:
+    chatsounds:
+        description: The command used to reload the ChatSounds config.
+        usage: Use /chatsounds reload
+        permission: chatsounds.reload
+        permission-message: You don't have permission to do that.
+        aliases: [cs]
