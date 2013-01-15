@@ -78,4 +78,4 @@ public class chatsounds extends JavaPlugin {
         return false;
     }
 }
-//
+//empty line to force change for Maven

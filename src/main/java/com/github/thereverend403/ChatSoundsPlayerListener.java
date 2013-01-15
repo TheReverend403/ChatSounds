@@ -178,3 +178,5 @@ public class ChatSoundsPlayerListener implements Listener {
 		p.playSound(p.getLocation(), s, volume, pitch);
 	}
 }
+
+//empty line to force change for Maven

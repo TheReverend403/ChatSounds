@@ -8,10 +8,10 @@
     <artifactId>ChatSounds</artifactId>
     <version>1.32</version>
     
-        <repositories>
+    <repositories>
         <repository>
             <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/artifactory/repo</url>
+            <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
     </repositories>
 
@@ -23,5 +23,4 @@
         </dependency>
     </dependencies>
 
-    
 </project>
