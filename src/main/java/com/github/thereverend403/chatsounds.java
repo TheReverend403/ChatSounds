@@ -25,12 +25,12 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class chatsounds extends JavaPlugin {
-    public final ChatSoundsPlayerListener pl = new ChatSoundsPlayerListener(this);
+    public final PlayerListener pl = new PlayerListener(this);
 	@Override
 	public void onEnable(){
 		FileConfiguration config = this.getConfig();
         PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(new ChatSoundsPlayerListener(this), this);
+        pm.registerEvents(new PlayerListener(this), this);
 		config = getConfig();
 		config.addDefault("chatsounds.global", true);
         config.addDefault("chatsounds.aliases.cat", "meow");
@@ -78,4 +78,3 @@ public class chatsounds extends JavaPlugin {
         return false;
     }
 }
-//empty line to force change for Maven

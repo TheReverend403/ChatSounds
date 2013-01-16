@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-public class ChatSoundsPlayerListener implements Listener {
+public class PlayerListener implements Listener {
 
 	public chatsounds plugin;
 	boolean b;
@@ -25,7 +25,7 @@ public class ChatSoundsPlayerListener implements Listener {
     String dragondeath;
 	static float pitch = 1;
 	static float volume = 10;
-	public ChatSoundsPlayerListener(chatsounds instance) {
+	public PlayerListener(chatsounds instance) {
 		plugin = instance;
 	}
 
@@ -48,7 +48,7 @@ public class ChatSoundsPlayerListener implements Listener {
             ender = plugin.getConfig().getString("chatsounds.aliases.enderman");
             explosion = plugin.getConfig().getString("chatsounds.aliases.explosion");
             dragondeath = plugin.getConfig().getString("chatsounds.aliases.dragondeath");
-		boolean b = plugin.getConfig().getBoolean("chatsounds.global");
+		    boolean b = plugin.getConfig().getBoolean("chatsounds.global");
 			String message = e.getMessage();
 			if (message.contains(cat)| (message.contains(catpurr) || (message.contains(dog) || (message.contains(doggrowl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep))))))))))) {
 				if(message.contains(cat)){
