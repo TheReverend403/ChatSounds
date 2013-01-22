@@ -50,7 +50,7 @@ public class PlayerListener implements Listener {
             dragondeath = plugin.getConfig().getString("chatsounds.aliases.dragondeath");
 		    boolean b = plugin.getConfig().getBoolean("chatsounds.global");
 			String message = e.getMessage();
-			if (message.contains(cat)| (message.contains(catpurr) || (message.contains(dog) || (message.contains(doggrowl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep))))))))))) {
+			if (message.contains(cat)| (message.contains(catpurr) || (message.contains(dog) || (message.contains(doggrowl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep) || (message.contains(explosion) || (message.contains(dragondeath))))))))))))) {
 				if(message.contains(cat)){
 					Sound s = Sound.CAT_MEOW;
 					if(b){

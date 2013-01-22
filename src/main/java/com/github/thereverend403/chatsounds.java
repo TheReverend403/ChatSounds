@@ -1,5 +1,5 @@
 /*
- * ChatSounds - a bukkit plugin to allow sounds effects in chat
+ * ChatSounds - a Bukkit plugin to allow sounds effects in chat
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
