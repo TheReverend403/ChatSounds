@@ -23,6 +23,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.MetricsLite;
+
+import java.io.IOException;
 
 public class chatsounds extends JavaPlugin {
     public final PlayerListener pl = new PlayerListener(this);
@@ -47,6 +50,12 @@ public class chatsounds extends JavaPlugin {
         config.addDefault("chatsounds.aliases.dragondeath", "dragondeath");
 		config.options().copyDefaults(true);
 		saveConfig();
+        try {
+            MetricsLite metrics = new MetricsLite(this);
+            metrics.start();
+        } catch (IOException e) {
+            // Failed to submit the stats :-(
+        }
         getLogger().info("ChatSounds has successfully enabled");
 		}
 

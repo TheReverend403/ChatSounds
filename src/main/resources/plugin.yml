@@ -1,6 +1,6 @@
 name: ChatSounds
 main: com.github.thereverend403.chatsounds
-version: 1.32
+version: 1.4
 author: TheReverend403
 commands:
     chatsounds:
