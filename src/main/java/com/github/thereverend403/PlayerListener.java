@@ -10,7 +10,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 public class PlayerListener implements Listener {
 
 	public chatsounds plugin;
-	boolean b;
+	boolean global;
     String cat;
     String catpurr;
     String dog;
@@ -26,15 +26,15 @@ public class PlayerListener implements Listener {
 	static float pitch = 1;
 	static float volume = 10;
 	public PlayerListener(chatsounds instance) {
-		plugin = instance;
+	plugin = instance;
 	}
 
 	@EventHandler
-	public void onChat(AsyncPlayerChatEvent e) {
+	public void onChat(AsyncPlayerChatEvent event) {
 		// There has to be a more efficient way to do this...
 		// Only triggering if the player has permission, but still checking on
 		// every chat event...
-		Player player = e.getPlayer();
+		Player player = event.getPlayer();
         if (player.hasPermission("chatsounds.allow")) {
             cat = plugin.getConfig().getString("chatsounds.aliases.cat");
             catpurr = plugin.getConfig().getString("chatsounds.aliases.catpurr");
@@ -48,135 +48,133 @@ public class PlayerListener implements Listener {
             ender = plugin.getConfig().getString("chatsounds.aliases.enderman");
             explosion = plugin.getConfig().getString("chatsounds.aliases.explosion");
             dragondeath = plugin.getConfig().getString("chatsounds.aliases.dragondeath");
-		    boolean b = plugin.getConfig().getBoolean("chatsounds.global");
-			String message = e.getMessage();
+		    boolean global = plugin.getConfig().getBoolean("chatsounds.global");
+			String message = event.getMessage();
 			if (message.contains(cat)| (message.contains(catpurr) || (message.contains(dog) || (message.contains(doggrowl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep) || (message.contains(explosion) || (message.contains(dragondeath))))))))))))) {
 				if(message.contains(cat)){
-					Sound s = Sound.CAT_MEOW;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.CAT_MEOW;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(catpurr)){
-					Sound s = Sound.CAT_PURR;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.CAT_PURR;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(dog)){
-					Sound s = Sound.WOLF_BARK;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.WOLF_BARK;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(doggrowl)){
-					Sound s = Sound.WOLF_GROWL;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.WOLF_GROWL;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(creeper)){
-					Sound s = Sound.FUSE;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.FUSE;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(cow)){
-					Sound s = Sound.COW_HURT;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.COW_HURT;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(chicken)){
-					Sound s = Sound.CHICKEN_IDLE;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.CHICKEN_IDLE;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(ender)){
-					Sound s = Sound.ENDERMAN_STARE;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.ENDERMAN_STARE;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(pig)){
-					Sound s = Sound.PIG_IDLE;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.PIG_IDLE;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
 				if(message.contains(sheep)){
-					Sound s = Sound.SHEEP_IDLE;
-					if(b){
-						for(Player p : Bukkit.getOnlinePlayers()){
-							playSound(p, s);
+					Sound sound = Sound.SHEEP_IDLE;
+					if(global){
+						for(Player online : Bukkit.getOnlinePlayers()){
+							playSound(online, sound);
 						}
 					}else{
-						playSound(player, s);
+						playSound(player, sound);
 					}
 				}
                 if(message.contains(explosion)){
-                    Sound s = Sound.EXPLODE;
-                    if(b){
-                        for(Player p : Bukkit.getOnlinePlayers()){
-                            playSound(p, s);
+                    Sound sound = Sound.EXPLODE;
+                    if(global){
+                        for(Player online : Bukkit.getOnlinePlayers()){
+                            playSound(online, sound);
                         }
                     }else{
-                        playSound(player, s);
+                        playSound(player, sound);
                     }
                 }
                 if(message.contains(dragondeath)){
-                    Sound s = Sound.ENDERDRAGON_DEATH;
-                    if(b){
-                        for(Player p : Bukkit.getOnlinePlayers()){
-                            playSound(p, s);
+                    Sound sound = Sound.ENDERDRAGON_DEATH;
+                    if(global){
+                        for(Player online : Bukkit.getOnlinePlayers()){
+                            playSound(online, sound);
                         }
                     }else{
-                        playSound(player, s);
+                        playSound(player, sound);
                     }
                 }
 			}
 		}
 	}
-	public static void playSound(Player p, Sound s){
-		p.playSound(p.getLocation(), s, volume, pitch);
+	public static void playSound(Player online, Sound sound){
+        online.playSound(online.getLocation(), sound, volume, pitch);
 	}
 }
-
-//empty line to force change for Maven
