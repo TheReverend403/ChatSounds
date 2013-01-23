@@ -87,4 +87,3 @@ public class chatsounds extends JavaPlugin {
         return false;
     }
 }
-//IRC Test
