@@ -12,9 +12,9 @@ public class PlayerListener implements Listener {
 	public chatsounds plugin;
 	boolean global;
     String cat;
-    String catpurr;
+    String cat_purr;
     String dog;
-    String doggrowl;
+    String dog_growl;
     String chicken;
     String cow;
     String sheep;
@@ -22,7 +22,8 @@ public class PlayerListener implements Listener {
     String creeper;
     String ender;
     String explosion;
-    String dragondeath;
+    String dragon_death;
+    String ghast_screech;
 	static float pitch = 1;
 	static float volume = 10;
 	public PlayerListener(chatsounds instance) {
@@ -37,9 +38,9 @@ public class PlayerListener implements Listener {
 		Player player = event.getPlayer();
         if (player.hasPermission("chatsounds.allow")) {
             cat = plugin.getConfig().getString("chatsounds.aliases.cat");
-            catpurr = plugin.getConfig().getString("chatsounds.aliases.catpurr");
+            cat_purr = plugin.getConfig().getString("chatsounds.aliases.cat-purr");
             dog = plugin.getConfig().getString("chatsounds.aliases.dog");
-            doggrowl = plugin.getConfig().getString("chatsounds.aliases.doggrowl");
+            dog_growl = plugin.getConfig().getString("chatsounds.aliases.dog-growl");
             chicken = plugin.getConfig().getString("chatsounds.aliases.chicken");
             cow = plugin.getConfig().getString("chatsounds.aliases.cow");
             sheep = plugin.getConfig().getString("chatsounds.aliases.sheep");
@@ -47,10 +48,11 @@ public class PlayerListener implements Listener {
             creeper = plugin.getConfig().getString("chatsounds.aliases.creeper");
             ender = plugin.getConfig().getString("chatsounds.aliases.enderman");
             explosion = plugin.getConfig().getString("chatsounds.aliases.explosion");
-            dragondeath = plugin.getConfig().getString("chatsounds.aliases.dragondeath");
+            dragon_death = plugin.getConfig().getString("chatsounds.aliases.dragon-death");
+            ghast_screech = plugin.getConfig().getString("chatsounds.aliases.ghast-screech");
 		    boolean global = plugin.getConfig().getBoolean("chatsounds.global");
 			String message = event.getMessage();
-			if (message.contains(cat)| (message.contains(catpurr) || (message.contains(dog) || (message.contains(doggrowl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep) || (message.contains(explosion) || (message.contains(dragondeath))))))))))))) {
+			if (message.contains(cat)| (message.contains(cat_purr) || (message.contains(dog) || (message.contains(dog_growl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep) || (message.contains(explosion) || (message.contains(dragon_death) || (message.contains(ghast_screech)))))))))))))) {
 				if(message.contains(cat)){
 					Sound sound = Sound.CAT_MEOW;
 					if(global){
@@ -61,7 +63,7 @@ public class PlayerListener implements Listener {
 						playSound(player, sound);
 					}
 				}
-				if(message.contains(catpurr)){
+				if(message.contains(cat_purr)){
 					Sound sound = Sound.CAT_PURR;
 					if(global){
 						for(Player online : Bukkit.getOnlinePlayers()){
@@ -81,7 +83,7 @@ public class PlayerListener implements Listener {
 						playSound(player, sound);
 					}
 				}
-				if(message.contains(doggrowl)){
+				if(message.contains(dog_growl)){
 					Sound sound = Sound.WOLF_GROWL;
 					if(global){
 						for(Player online : Bukkit.getOnlinePlayers()){
@@ -161,8 +163,18 @@ public class PlayerListener implements Listener {
                         playSound(player, sound);
                     }
                 }
-                if(message.contains(dragondeath)){
+                if(message.contains(dragon_death)){
                     Sound sound = Sound.ENDERDRAGON_DEATH;
+                    if(global){
+                        for(Player online : Bukkit.getOnlinePlayers()){
+                            playSound(online, sound);
+                        }
+                    }else{
+                        playSound(player, sound);
+                    }
+                }
+                if(message.contains(ghast_screech)){
+                    Sound sound = Sound.GHAST_SCREAM;
                     if(global){
                         for(Player online : Bukkit.getOnlinePlayers()){
                             playSound(online, sound);

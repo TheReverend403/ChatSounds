@@ -37,9 +37,9 @@ public class chatsounds extends JavaPlugin {
 		config = getConfig();
 		config.addDefault("chatsounds.global", true);
         config.addDefault("chatsounds.aliases.cat", "meow");
-        config.addDefault("chatsounds.aliases.catpurr", "purr");
+        config.addDefault("chatsounds.aliases.cat-purr", "purr");
         config.addDefault("chatsounds.aliases.dog", "woof");
-        config.addDefault("chatsounds.aliases.doggrowl", "grrr");
+        config.addDefault("chatsounds.aliases.dog-growl", "grrr");
         config.addDefault("chatsounds.aliases.pig", "oink");
         config.addDefault("chatsounds.aliases.chicken", "cluck");
         config.addDefault("chatsounds.aliases.cow", "moo");
@@ -47,7 +47,8 @@ public class chatsounds extends JavaPlugin {
         config.addDefault("chatsounds.aliases.creeper", "hiss");
         config.addDefault("chatsounds.aliases.enderman", "slender");
         config.addDefault("chatsounds.aliases.explosion", "boom");
-        config.addDefault("chatsounds.aliases.dragondeath", "dragondeath");
+        config.addDefault("chatsounds.aliases.dragon-death", "dragondeath");
+        config.addDefault("chatsounds.aliases.ghast-screech", "screech");
 		config.options().copyDefaults(true);
 		saveConfig();
         try {
