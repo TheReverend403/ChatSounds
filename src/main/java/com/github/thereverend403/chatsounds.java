@@ -31,26 +31,9 @@ public class chatsounds extends JavaPlugin {
     public final PlayerListener pl = new PlayerListener(this);
 	@Override
 	public void onEnable(){
-		FileConfiguration config = this.getConfig();
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new PlayerListener(this), this);
-		config = getConfig();
-		config.addDefault("chatsounds.global", true);
-        config.addDefault("chatsounds.aliases.cat", "meow");
-        config.addDefault("chatsounds.aliases.cat-purr", "purr");
-        config.addDefault("chatsounds.aliases.dog", "woof");
-        config.addDefault("chatsounds.aliases.dog-growl", "grrr");
-        config.addDefault("chatsounds.aliases.pig", "oink");
-        config.addDefault("chatsounds.aliases.chicken", "cluck");
-        config.addDefault("chatsounds.aliases.cow", "moo");
-        config.addDefault("chatsounds.aliases.sheep", "baaa");
-        config.addDefault("chatsounds.aliases.creeper", "hiss");
-        config.addDefault("chatsounds.aliases.enderman", "slender");
-        config.addDefault("chatsounds.aliases.explosion", "boom");
-        config.addDefault("chatsounds.aliases.dragon-death", "dragondeath");
-        config.addDefault("chatsounds.aliases.ghast-screech", "screech");
-		config.options().copyDefaults(true);
-		saveConfig();
+		saveDefaultConfig();
         try {
             MetricsLite metrics = new MetricsLite(this);
             metrics.start();

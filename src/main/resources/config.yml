@@ -1,0 +1,18 @@
+chatsounds:
+  #If set to true, sounds will be played to everyone on the server. If false, will only play to the person that triggers it.
+  global: false
+  # Allows you to set the trigger words. Syntax is <sound>: <trigger word>
+  aliases:
+    cat: meow
+    cat-purr: purr
+    dog: woof
+    dog-growl: grrr
+    pig: oink
+    chicken: cluck
+    cow: moo
+    sheep: baaa
+    creeper: hiss
+    enderman: slender
+    explosion: boom
+    dragon-death: dragondeath
+    ghast-screech: screech
