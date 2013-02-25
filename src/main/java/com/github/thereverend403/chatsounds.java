@@ -17,10 +17,6 @@
 
 package com.github.thereverend403;
 
-import org.bukkit.ChatColor;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.mcstats.MetricsLite;
@@ -28,11 +24,14 @@ import org.mcstats.MetricsLite;
 import java.io.IOException;
 
 public class chatsounds extends JavaPlugin {
+
     public final PlayerListener pl = new PlayerListener(this);
+
 	@Override
 	public void onEnable(){
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new PlayerListener(this), this);
+        getCommand("chatsounds").setExecutor(new CSCommandExecutor(this));
 		saveDefaultConfig();
         try {
             MetricsLite metrics = new MetricsLite(this);
@@ -49,25 +48,4 @@ public class chatsounds extends JavaPlugin {
 		getLogger().info("ChatSounds has successfully disabled");
 	}
 
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        if(cmd.getName().equalsIgnoreCase("chatsounds")){
-                 if(args.length < 1){
-                    sender.sendMessage(ChatColor.RED + "Not enough arguments.");
-                    return true;
-                 }
-                 if(args.length > 1){
-                    sender.sendMessage(ChatColor.RED + "Too many arguments.");
-                    return true;
-                 }
-            if(args[0].equalsIgnoreCase("reload") && sender.hasPermission("chatsounds.reload")){
-                reloadConfig();
-                sender.sendMessage(ChatColor.GREEN + "Config reloaded.");
-                return true;
-        }else{
-            sender.sendMessage(ChatColor.RED + "You do not have permission to do that");
-            return true;
-        }
-    }
-        return false;
-    }
 }
