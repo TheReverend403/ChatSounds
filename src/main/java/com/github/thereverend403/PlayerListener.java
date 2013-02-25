@@ -61,7 +61,19 @@ public class PlayerListener implements Listener
             ghast_screech = plugin.getConfig().getString("chatsounds.aliases.ghast-screech");
             global = plugin.getConfig().getBoolean("chatsounds.global");
             String message = event.getMessage();
-            if (message.contains(cat) | (message.contains(cat_purr) || (message.contains(dog) || (message.contains(dog_growl) || (message.contains(creeper) || (message.contains(cow) || (message.contains(chicken) || (message.contains(ender) || (message.contains(pig) || (message.contains(sheep) || (message.contains(explosion) || (message.contains(dragon_death) || (message.contains(ghast_screech))))))))))))))
+            if (message.contains(cat) ||
+                    (message.contains(cat_purr) || 
+                            (message.contains(dog) ||
+                                    (message.contains(dog_growl) ||
+                                            (message.contains(creeper) ||
+                                                    (message.contains(cow) ||
+                                                            (message.contains(chicken) ||
+                                                                    (message.contains(ender) ||
+                                                                            (message.contains(pig) ||
+                                                                                    (message.contains(sheep) ||
+                                                                                            (message.contains(explosion) ||
+                                                                                                    (message.contains(dragon_death) ||
+                                                                                                            (message.contains(ghast_screech))))))))))))))
             {
                 if (message.contains(cat))
                 {
@@ -70,8 +82,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -85,8 +99,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -100,8 +116,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -115,8 +133,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -130,8 +150,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -145,8 +167,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -160,8 +184,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -175,8 +201,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -190,8 +218,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -205,8 +235,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -220,8 +252,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -235,8 +269,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
@@ -250,8 +286,10 @@ public class PlayerListener implements Listener
                     if (global)
                     {
                         for (Player online : Bukkit.getOnlinePlayers())
-                        {
-                            playSound(online, sound);
+                        { if (online.hasPermission("chatsounds.hear"))
+                            {
+                                playSound(online, sound);
+                            }
                         }
                     } else
                     {
