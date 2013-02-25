@@ -22,22 +22,22 @@ public class CSCommandExecutor implements CommandExecutor
         {
             if (args.length < 1)
             {
-                sender.sendMessage(ChatColor.RED + "Not enough arguments.");
+                sender.sendMessage(ChatColor.RED + "Not enough arguments!");
                 return true;
             }
             if (args.length > 1)
             {
-                sender.sendMessage(ChatColor.RED + "Too many arguments.");
+                sender.sendMessage(ChatColor.RED + "Too many arguments!");
                 return true;
             }
             if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("chatsounds.reload"))
             {
                 plugin.reloadConfig();
-                sender.sendMessage(ChatColor.GREEN + "Config reloaded.");
+                sender.sendMessage(ChatColor.GREEN + "Config reloaded!");
                 return true;
             } else
             {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to do that.");
+                sender.sendMessage(ChatColor.RED + "You do not have permission to do that!");
                 return true;
             }
         }
