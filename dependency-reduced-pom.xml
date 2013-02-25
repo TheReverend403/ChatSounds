@@ -37,16 +37,12 @@
       <id>Plugin Metrics</id>
       <url>http://repo.mcstats.org/content/repositories/public</url>
     </repository>
-    <repository>
-      <id>vault-repo</id>
-      <url>http://ci.herocraftonline.com/plugin/repository/everything</url>
-    </repository>
   </repositories>
   <dependencies>
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
-      <version>1.4.6-R0.4-SNAPSHOT</version>
+      <version>1.4.7-R1.1-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>

@@ -23,29 +23,34 @@ import org.mcstats.MetricsLite;
 
 import java.io.IOException;
 
-public class chatsounds extends JavaPlugin {
+public class chatsounds extends JavaPlugin
+{
 
     public final PlayerListener pl = new PlayerListener(this);
 
-	@Override
-	public void onEnable(){
+    @Override
+    public void onEnable()
+    {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(new PlayerListener(this), this);
         getCommand("chatsounds").setExecutor(new CSCommandExecutor(this));
-		saveDefaultConfig();
-        try {
+        saveDefaultConfig();
+        try
+        {
             MetricsLite metrics = new MetricsLite(this);
             metrics.start();
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             // Failed to submit the stats :-(
         }
         getLogger().info("ChatSounds has successfully enabled");
-		}
+    }
 
-	@Override
-	public void onDisable(){
-		//Do more things.
-		getLogger().info("ChatSounds has successfully disabled");
-	}
+    @Override
+    public void onDisable()
+    {
+        //Do more things.
+        getLogger().info("ChatSounds has successfully disabled");
+    }
 
 }

@@ -6,29 +6,37 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class CSCommandExecutor implements CommandExecutor {
+public class CSCommandExecutor implements CommandExecutor
+{
 
     private chatsounds plugin;
 
-    public CSCommandExecutor(chatsounds plugin) {
+    public CSCommandExecutor(chatsounds plugin)
+    {
         this.plugin = plugin;
     }
 
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        if(cmd.getName().equalsIgnoreCase("chatsounds")){
-            if(args.length < 1){
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
+    {
+        if (cmd.getName().equalsIgnoreCase("chatsounds"))
+        {
+            if (args.length < 1)
+            {
                 sender.sendMessage(ChatColor.RED + "Not enough arguments.");
                 return true;
             }
-            if(args.length > 1){
+            if (args.length > 1)
+            {
                 sender.sendMessage(ChatColor.RED + "Too many arguments.");
                 return true;
             }
-            if(args[0].equalsIgnoreCase("reload") && sender.hasPermission("chatsounds.reload")){
+            if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("chatsounds.reload"))
+            {
                 plugin.reloadConfig();
                 sender.sendMessage(ChatColor.GREEN + "Config reloaded.");
                 return true;
-            }else{
+            } else
+            {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to do that.");
                 return true;
             }
