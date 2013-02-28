@@ -32,7 +32,7 @@ public class chatsounds extends JavaPlugin
     public void onEnable()
     {
         PluginManager pm = getServer().getPluginManager();
-        pm.registerEvents(new PlayerListener(this), this);
+        pm.registerEvents(pl, this);
         getCommand("chatsounds").setExecutor(new CSCommandExecutor(this));
         saveDefaultConfig();
         try
