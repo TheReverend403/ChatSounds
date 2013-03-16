@@ -59,7 +59,7 @@ public class PlayerListener implements Listener
             dragon_death = plugin.getConfig().getString("chatsounds.aliases.dragon-death");
             ghast_screech = plugin.getConfig().getString("chatsounds.aliases.ghast-screech");
             global = plugin.getConfig().getBoolean("chatsounds.global");
-            String message = event.getMessage();
+            String message = event.getMessage().toLowerCase();
             if (message.contains(cat)) {
                 amount++;
                 Sound sound = Sound.CAT_MEOW;
