@@ -9,16 +9,16 @@ import org.bukkit.command.CommandSender;
 public class CSCommandExecutor implements CommandExecutor
 {
 
-    private chatsounds plugin;
+    private ChatSounds plugin;
 
-    public CSCommandExecutor(chatsounds plugin)
+    public CSCommandExecutor(ChatSounds plugin)
     {
         this.plugin = plugin;
     }
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
-        if (cmd.getName().equalsIgnoreCase("chatsounds"))
+        if (cmd.getName().equalsIgnoreCase("ChatSounds"))
         {
             if (args.length < 1)
             {
@@ -30,7 +30,7 @@ public class CSCommandExecutor implements CommandExecutor
                 sender.sendMessage(ChatColor.RED + "Too many arguments!");
                 return true;
             }
-            if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("chatsounds.reload"))
+            if (args[0].equalsIgnoreCase("reload") && sender.hasPermission("ChatSounds.reload"))
             {
                 plugin.reloadConfig();
                 sender.sendMessage(ChatColor.GREEN + "Config reloaded!");

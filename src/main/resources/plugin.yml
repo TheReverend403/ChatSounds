@@ -1,5 +1,5 @@
 name: ChatSounds
-main: com.github.thereverend403.chatsounds
+main: com.github.thereverend403.ChatSounds
 version: 1.41
 author: TheReverend403
 commands:
