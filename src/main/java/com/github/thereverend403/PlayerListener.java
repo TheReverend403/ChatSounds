@@ -1,6 +1,5 @@
 package com.github.thereverend403;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -43,23 +42,23 @@ public class PlayerListener implements Listener
          every chat event... */
 
         Player player = event.getPlayer();
-        if (player.hasPermission("ChatSounds.allow"))
+        if (player.hasPermission("chatsounds.allow"))
         {
             amount = 0;
-            cat = plugin.getConfig().getString("ChatSounds.aliases.cat");
-            cat_purr = plugin.getConfig().getString("ChatSounds.aliases.cat-purr");
-            dog = plugin.getConfig().getString("ChatSounds.aliases.dog");
-            dog_growl = plugin.getConfig().getString("ChatSounds.aliases.dog-growl");
-            chicken = plugin.getConfig().getString("ChatSounds.aliases.chicken");
-            cow = plugin.getConfig().getString("ChatSounds.aliases.cow");
-            sheep = plugin.getConfig().getString("ChatSounds.aliases.sheep");
-            pig = plugin.getConfig().getString("ChatSounds.aliases.pig");
-            creeper = plugin.getConfig().getString("ChatSounds.aliases.creeper");
-            ender = plugin.getConfig().getString("ChatSounds.aliases.enderman");
-            explosion = plugin.getConfig().getString("ChatSounds.aliases.explosion");
-            dragon_death = plugin.getConfig().getString("ChatSounds.aliases.dragon-death");
-            ghast_screech = plugin.getConfig().getString("ChatSounds.aliases.ghast-screech");
-            global = plugin.getConfig().getBoolean("ChatSounds.global");
+            cat = plugin.getConfig().getString("chatsounds.aliases.cat");
+            cat_purr = plugin.getConfig().getString("chatsounds.aliases.cat-purr");
+            dog = plugin.getConfig().getString("chatsounds.aliases.dog");
+            dog_growl = plugin.getConfig().getString("chatsounds.aliases.dog-growl");
+            chicken = plugin.getConfig().getString("chatsounds.aliases.chicken");
+            cow = plugin.getConfig().getString("chatsounds.aliases.cow");
+            sheep = plugin.getConfig().getString("chatsounds.aliases.sheep");
+            pig = plugin.getConfig().getString("chatsounds.aliases.pig");
+            creeper = plugin.getConfig().getString("chatsounds.aliases.creeper");
+            ender = plugin.getConfig().getString("chatsounds.aliases.enderman");
+            explosion = plugin.getConfig().getString("chatsounds.aliases.explosion");
+            dragon_death = plugin.getConfig().getString("chatsounds.aliases.dragon-death");
+            ghast_screech = plugin.getConfig().getString("chatsounds.aliases.ghast-screech");
+            global = plugin.getConfig().getBoolean("chatsounds.global");
             String message = event.getMessage().toLowerCase();
             if (message.contains(cat))
             {
@@ -67,9 +66,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.CAT_MEOW;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -86,9 +85,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.CAT_PURR;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -105,9 +104,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.WOLF_BARK;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -124,9 +123,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.WOLF_GROWL;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -143,9 +142,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.FUSE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -162,9 +161,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.COW_HURT;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -181,9 +180,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.CHICKEN_IDLE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -200,9 +199,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.ENDERMAN_STARE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -219,9 +218,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.PIG_IDLE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -238,9 +237,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.SHEEP_IDLE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -257,9 +256,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.EXPLODE;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -276,9 +275,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.ENDERDRAGON_DEATH;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
@@ -295,9 +294,9 @@ public class PlayerListener implements Listener
                 Sound sound = Sound.GHAST_SCREAM;
                 if (global)
                 {
-                    for (Player online : Bukkit.getOnlinePlayers())
+                    for (Player online : plugin.getServer().getOnlinePlayers())
                     {
-                        if (online.hasPermission("ChatSounds.hear"))
+                        if (online.hasPermission("chatsounds.hear"))
                         {
                             playSound(online, sound);
                         }
