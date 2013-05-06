@@ -43,7 +43,8 @@ public class PlayerListener implements Listener
          every chat event... */
 
         Player player = event.getPlayer();
-        if (player.hasPermission("ChatSounds.allow")) {
+        if (player.hasPermission("ChatSounds.allow"))
+        {
             amount = 0;
             cat = plugin.getConfig().getString("ChatSounds.aliases.cat");
             cat_purr = plugin.getConfig().getString("ChatSounds.aliases.cat-purr");
@@ -60,172 +61,250 @@ public class PlayerListener implements Listener
             ghast_screech = plugin.getConfig().getString("ChatSounds.aliases.ghast-screech");
             global = plugin.getConfig().getBoolean("ChatSounds.global");
             String message = event.getMessage().toLowerCase();
-            if (message.contains(cat)) {
+            if (message.contains(cat))
+            {
                 amount++;
                 Sound sound = Sound.CAT_MEOW;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(cat_purr)) {
+            if (message.contains(cat_purr))
+            {
                 amount++;
                 Sound sound = Sound.CAT_PURR;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(dog)) {
+            if (message.contains(dog))
+            {
                 amount++;
                 Sound sound = Sound.WOLF_BARK;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(dog_growl)) {
+            if (message.contains(dog_growl))
+            {
                 amount++;
                 Sound sound = Sound.WOLF_GROWL;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(creeper)) {
+            if (message.contains(creeper))
+            {
                 amount++;
                 Sound sound = Sound.FUSE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(cow)) {
+            if (message.contains(cow))
+            {
                 amount++;
                 Sound sound = Sound.COW_HURT;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(chicken)) {
+            if (message.contains(chicken))
+            {
                 amount++;
                 Sound sound = Sound.CHICKEN_IDLE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(ender)) {
+            if (message.contains(ender))
+            {
                 amount++;
                 Sound sound = Sound.ENDERMAN_STARE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(pig)) {
+            if (message.contains(pig))
+            {
                 amount++;
                 Sound sound = Sound.PIG_IDLE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(sheep)) {
+            if (message.contains(sheep))
+            {
                 amount++;
                 Sound sound = Sound.SHEEP_IDLE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(explosion)) {
+            if (message.contains(explosion))
+            {
                 amount++;
                 Sound sound = Sound.EXPLODE;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(dragon_death)) {
+            if (message.contains(dragon_death))
+            {
                 amount++;
                 Sound sound = Sound.ENDERDRAGON_DEATH;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
-            if (message.contains(ghast_screech)) {
+            if (message.contains(ghast_screech))
+            {
                 amount++;
                 Sound sound = Sound.GHAST_SCREAM;
-                if (global) {
-                    for (Player online : Bukkit.getOnlinePlayers()) {
-                        if (online.hasPermission("ChatSounds.hear")) {
+                if (global)
+                {
+                    for (Player online : Bukkit.getOnlinePlayers())
+                    {
+                        if (online.hasPermission("ChatSounds.hear"))
+                        {
                             playSound(online, sound);
                         }
                     }
-                } else {
+                }
+                else
+                {
                     playSound(player, sound);
                 }
             }
@@ -234,9 +313,12 @@ public class PlayerListener implements Listener
 
     public void playSound(Player online, Sound sound)
     {
-        if (amount > 1) {
+        if (amount > 1)
+        {
             return;
-        } else {
+        }
+        else
+        {
             online.playSound(online.getLocation(), sound, volume, pitch);
         }
     }

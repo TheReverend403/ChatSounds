@@ -23,7 +23,7 @@ import org.mcstats.MetricsLite;
 
 import java.io.IOException;
 
-public class chatsounds extends JavaPlugin
+public class ChatSounds extends JavaPlugin
 {
 
     public final PlayerListener pl = new PlayerListener(this);
@@ -33,7 +33,7 @@ public class chatsounds extends JavaPlugin
     {
         PluginManager pm = getServer().getPluginManager();
         pm.registerEvents(pl, this);
-        getCommand("chatsounds").setExecutor(new CSCommandExecutor(this));
+        getCommand("ChatSounds").setExecutor(new CSCommandExecutor(this));
         saveDefaultConfig();
         try
         {

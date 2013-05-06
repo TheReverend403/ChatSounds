@@ -35,7 +35,8 @@ public class CSCommandExecutor implements CommandExecutor
                 plugin.reloadConfig();
                 sender.sendMessage(ChatColor.GREEN + "Config reloaded!");
                 return true;
-            } else
+            }
+            else
             {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to do that!");
                 return true;
