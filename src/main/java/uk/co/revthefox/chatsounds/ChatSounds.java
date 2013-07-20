@@ -63,7 +63,7 @@ public class ChatSounds extends JavaPlugin
         {
             try
             {
-                Sound sound = Sound.valueOf(aliasTitle);
+                Sound sound = Sound.valueOf(aliasTitle.toUpperCase());
                 List<String> aliases = aliasSection.getStringList(aliasTitle);
 
                 for (String alias : aliases)
