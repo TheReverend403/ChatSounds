@@ -14,3 +14,14 @@ commands:
   chatsounds:
     description: ChatSounds core command
     aliases: [cs]
+
+permissions:
+  chatsounds.reload:
+    description: Permission for /chatsounds reload
+    default: OP
+  chatsounds.send:
+    description: Permission to trigger chat sounds
+    default: true
+  chatsounds.receive:
+    description: Permissions to hear chat sounds
+    default: true
