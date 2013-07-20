@@ -27,12 +27,11 @@ public class ChatSoundsListener implements Listener
 
         String trigger = "";
 
-        String[] split = event.getMessage().split(" ");
-        for (String string : split)
+        for (String alias : this.plugin.getAliases())
         {
-            if (this.plugin.getAliases().contains(string))
+            if (event.getMessage().contains(alias))
             {
-                trigger = string;
+                trigger = alias;
                 break;
             }
         }
