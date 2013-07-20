@@ -1,11 +1,16 @@
 name: ChatSounds
-main: com.github.thereverend403.ChatSounds
-version: 1.41
+version: ${project.version}
+main: uk.co.revthefox.chatsounds.ChatSounds
+
+description: Troll your friends by making them think there's a creeper nearby, simply by saying 'hiss'
+
 author: TheReverend403
+
+website: http://www.revthefox.co.uk/
+
+prefix: ChatSounds
+
 commands:
-    chatsounds:
-        description: The command used to reload the ChatSounds config.
-        usage: Use /chatsounds reload
-        permission: chatsounds.reload
-        permission-message: You don't have permission to do that.
-        aliases: [cs]
+  chatsounds:
+    description: ChatSounds core command
+    aliases: [cs]

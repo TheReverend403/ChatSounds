@@ -1,18 +1,28 @@
-chatsounds:
-  #If set to true, sounds will be played to everyone on the server. If false, will only play to the person that triggers it.
-  global: false
-  # Allows you to set the trigger words. Syntax is <sound>: <trigger word>
-  aliases:
-    cat: meow
-    cat-purr: purr
-    dog: woof
-    dog-growl: grrr
-    pig: oink
-    chicken: cluck
-    cow: moo
-    sheep: baaa
-    creeper: hiss
-    enderman: slender
-    explosion: boom
-    dragon-death: dragondeath
-    ghast-screech: screech
+# This is the range that the sound effect is played.
+# If this is set to -1, it will play to all players on the server.
+# If this is set to 0, it will only play to the player.
+# Any other number represents the range in blocks that the sound can be heard for.
+range: -1
+
+volume: 1.0
+
+pitch: 1.0
+
+# This is a collection of lists of aliases for every sound that can be played in Minecraft.
+# Since there are so many sounds, not all of them have been added here, however this plugin
+# has been developed so that you can add sounds yourself, for example, if more sounds are
+# added to Minecraft. More information on how to do this can be found on the BukkitDev page.
+aliases:
+  explode:
+  - explode
+  - boom
+  - tnt
+  cat_meow:
+  - meow
+  cat_purr:
+  - purr
+  cat_purreow:
+  - purreow
+  cow_idle:
+  - cow
+  - moo
