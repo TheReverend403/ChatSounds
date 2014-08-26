@@ -1,4 +1,4 @@
 ChatSounds
 ==========
 
-Bukkit plugin to allow sounds triggered by chat
+Plugin full of ugly code.
