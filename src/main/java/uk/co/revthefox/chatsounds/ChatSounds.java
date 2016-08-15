@@ -71,7 +71,7 @@ public class ChatSounds extends JavaPlugin
                     this.soundAliases.put(alias, sound);
                 }
             }
-            catch (NullPointerException ex)
+            catch (IllegalArgumentException ex)
             {
             }
         }

@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>ChatSounds</name>
-    <url>http://www.revthefox.co.uk/</url>
+    <description>Play Minecraft sounds with chat triggers.</description>
+    <url>https://revthefox.co.uk/</url>
 
     <groupId>ChatSounds</groupId>
     <artifactId>ChatSounds</artifactId>
-    <version>1.50</version>
+    <version>1.60</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <internal.jdkVersion>1.8</internal.jdkVersion>
     </properties>
 
     <repositories>
         <repository>
-            <id>bukkit-repo</id>
-            <url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <name>Spigot Maven Repository</name>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
         <repository>
-            <id>Plugin Metrics</id>
-            <url>http://repo.mcstats.org/content/repositories/public</url>
+            <id>metrics-repo</id>
+            <name>Metrics Maven Repository</name>
+            <url>http://repo.mcstats.org/content/groups/public/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.6.2-R0.1-SNAPSHOT</version>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.10.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mcstats.bukkit</groupId>
             <artifactId>metrics-lite</artifactId>
-            <version>R7</version>
+            <version>R8-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -42,15 +48,11 @@
     <build>
         <defaultGoal>clean package</defaultGoal>
 
-        <directory>target</directory>
-        <outputDirectory>target/classes</outputDirectory>
-        <sourceDirectory>${basedir}/src/main/java/</sourceDirectory>
-
-        <finalName>${project.artifactId}</finalName>
+        <finalName>${project.name}</finalName>
 
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>${basedir}/src/main/resources/</directory>
                 <filtering>true</filtering>
                 <includes>
                     <include>**/*</include>
@@ -62,32 +64,36 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
+                <version>3.5.1</version>
+
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>${internal.jdkVersion}</source>
+                    <target>${internal.jdkVersion}</target>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.1</version>
+                <version>2.4.3</version>
+
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <artifactSet>
-                                <includes>
-                                    <include>org.mcstats.bukkit:metrics-lite</include>
-                                </includes>
-                            </artifactSet>
-                            <minimizeJar>true</minimizeJar>
-                        </configuration>
                     </execution>
                 </executions>
+
+                <configuration>
+                    <finalName>${project.name}</finalName>
+                    <minimizeJar>true</minimizeJar>
+                    <artifactSet>
+                        <includes>
+                            <include>org.mcstats.bukkit:metrics-lite</include>
+                        </includes>
+                    </artifactSet>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -16,17 +16,18 @@ pitch: 1.0
 # Since there are so many sounds, not all of them have been added here, however this plugin
 # has been developed so that you can add sounds yourself, for example, if more sounds are
 # added to Minecraft. More information on how to do this can be found on the BukkitDev page.
+# https://hub.spigotmc.org/stash/projects/SPIGOT/repos/bukkit/browse/src/main/java/org/bukkit/Sound.java
 aliases:
-  explode:
+  entity_generic_explode:
   - explode
   - boom
   - tnt
-  cat_meow:
+  entity_cat_ambient:
   - meow
-  cat_purr:
+  entity_cat_purr:
   - purr
-  cat_purreow:
+  entity_cat_purreow:
   - purreow
-  cow_idle:
+  entity_cow_ambient:
   - cow
   - moo
